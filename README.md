@@ -60,3 +60,8 @@ This project demonstrates how to evaluate and visualize the performance of Micro
 !pip install kagglehub transformers torch wordcloud matplotlib seaborn
 ```
 
+###🔐 Upload kaggle.json
+```bash
+from google.colab import files
+files.upload()  # Upload your kaggle.json
+```
