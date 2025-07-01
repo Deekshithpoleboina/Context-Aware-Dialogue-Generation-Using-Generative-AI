@@ -1,59 +1,89 @@
-# Context-Aware Dialogue Generation Using Generative AI
+# DialoGPT Large: Dialogue Evaluation & Visualization
 
-## 📌 Overview
+This project demonstrates how to evaluate and visualize the performance of Microsoft's `DialoGPT-large` conversational language model using a dataset sourced from Kaggle.
 
-This project focuses on enhancing the naturalness and relevance of virtual assistant conversations using advanced generative AI techniques. It proposes a context-aware framework for dialogue generation, leveraging transformer-based models to produce coherent, contextually relevant responses in real time.
+## 📌 Features
 
----
+- Integration with KaggleHub to download datasets  
+- Preprocessing and cleaning of dialogue data  
+- Tokenization using Hugging Face's `transformers`  
+- Perplexity computation to assess language model performance  
+- Visualization tools:
+  - Training loss graph
+  - Token confidence heatmaps
+  - Word clouds (optional)
 
-## 📂 Project Description
+## 🚀 Installation
 
-The notebook explores how generative models, particularly in the field of NLP, can improve dialogue generation by incorporating conversational context. The solution is aimed at virtual assistants, enabling them to maintain consistent and intelligent multi-turn conversations.
-
-Key elements include:
-
-- Context extraction and management
-- Use of pretrained models like DialoGPT
-- Sequence generation and evaluation
-- Performance metrics and visualizations
-
-> 🔍 Notebook: [`GAI____Project.ipynb`](./GAI____Project.ipynb)
-
----
-
-## 🔧 Features
-
-- ✅ Preprocessing and formatting of conversation datasets
-- 🧠 Use of transformer-based generative models (e.g., GPT-2, DialoGPT-Large)
-- 🧾 Context tracking and dialogue history management
-- 📈 Evaluation metrics: BLEU, ROUGE, and Perplexity
-- 📊 Visual analysis of model outputs
-- 📥 Integration with KaggleHub for pretrained model downloads
-
----
-
-## 🤖 Pretrained Model
-
-This project uses a pretrained version of **DialoGPT-Large**, downloaded using KaggleHub:
-
-```python
-import kagglehub
-path = kagglehub.dataset_download("mathurinache/dialogptlarge")
-print("Path to dataset files:", path)
-
-
-## 🛠️ Installation
-
-To set up the project locally, follow these steps:
+Clone this repository and install dependencies:
 
 ```bash
-# Clone the repository
-git clone https://github.com/Deekshithpoleboina/AIML-2024.git
-cd AIML-2024
-
-# (Optional) Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
+git clone https://github.com/yourusername/dialoGPT-dialogue-eval.git
+cd dialoGPT-dialogue-eval
 pip install -r requirements.txt
+```
+Install additional dependencies inside a Jupyter/Colab notebook:
+
+python
+Copy
+Edit
+!pip install kagglehub transformers torch wordcloud matplotlib seaborn
+📂 Dataset
+You must upload your kaggle.json file to authenticate and access the dataset:
+
+python
+Copy
+Edit
+from google.colab import files
+files.upload()  # Upload your kaggle.json
+The dataset is automatically downloaded using:
+
+python
+Copy
+Edit
+import kagglehub
+path = kagglehub.dataset_download("mathurinache/dialogptlarge")
+🛠️ Usage
+Clean and Tokenize Dialogue
+python
+Copy
+Edit
+cleaned = clean_text(raw_text)
+tokens = tokenize_dialogues([cleaned])
+Calculate Perplexity
+python
+Copy
+Edit
+ppl = calculate_perplexity(tokens)
+print("Model Perplexity:", ppl)
+Plot Loss Graph
+python
+Copy
+Edit
+plot_loss_graph([1.85, 1.72, 1.55, 1.42])  # Example values
+Visualize Token Confidence
+python
+Copy
+Edit
+visualize_token_confidence("How are you doing today?")
+🧰 Technologies Used
+Python 3
+
+Hugging Face Transformers
+
+PyTorch
+
+KaggleHub
+
+Matplotlib & Seaborn
+
+WordCloud (optional)
+
+#🤝 Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
+
+#📄 License
+This project is licensed under the MIT License.
+
+#👤 Author
+Your Name — [https://github.com/Deekshithpoleboina]
