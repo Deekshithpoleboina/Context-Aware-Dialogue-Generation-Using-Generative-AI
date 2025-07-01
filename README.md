@@ -1,89 +1,122 @@
-# DialoGPT Large: Dialogue Evaluation & Visualization
+# 💬 DialoGPT Large: Dialogue Evaluation & Visualization
 
 This project demonstrates how to evaluate and visualize the performance of Microsoft's `DialoGPT-large` conversational language model using a dataset sourced from Kaggle.
 
+---
+
+## 📂 Dataset
+
+- **Source**: [DialoGPT Dataset (KaggleHub)](https://www.kaggle.com/datasets/mathurinache/dialogptlarge)
+- **Model Used**: microsoft/DialoGPT-large
+- **Usage**: Token-level evaluation and response generation
+
+---
+
+## 🛠️ Tools & Libraries
+
+- Python 3  
+- Hugging Face Transformers  
+- PyTorch  
+- KaggleHub  
+- Matplotlib, Seaborn  
+- WordCloud *(optional)*
+
+---
+
 ## 📌 Features
 
-- Integration with KaggleHub to download datasets  
-- Preprocessing and cleaning of dialogue data  
-- Tokenization using Hugging Face's `transformers`  
-- Perplexity computation to assess language model performance  
-- Visualization tools:
-  - Training loss graph
-  - Token confidence heatmaps
-  - Word clouds (optional)
+- 🔄 Dataset download using KaggleHub  
+- 🧽 Preprocessing and cleaning of dialogue data  
+- 🧠 Tokenization using Hugging Face `transformers`  
+- 📊 Perplexity calculation for evaluating model performance  
+- 📈 Visual tools:
+  - Loss graph over time
+  - Token confidence visualization
+  - Optional word cloud generation
 
-## 🚀 Installation
+---
 
-Clone this repository and install dependencies:
+## ⚙️ Methodology
 
-```bash
-git clone https://github.com/yourusername/dialoGPT-dialogue-eval.git
-cd dialoGPT-dialogue-eval
-pip install -r requirements.txt
-```
-Install additional dependencies inside a Jupyter/Colab notebook:
+1. **Setup**
+   - Upload `kaggle.json` to authenticate KaggleHub
+   - Download dataset from Kaggle using `kagglehub`
 
-python
-Copy
-Edit
+2. **Model & Tokenizer**
+   - Load `microsoft/DialoGPT-large` from Hugging Face
+   - Process text using the tokenizer
+
+3. **Evaluation**
+   - Compute perplexity over the test samples
+   - Visualize training loss trends
+   - Visualize token-level confidence scores
+
+---
+
+## 🧪 Usage
+
+### 📦 Install Dependencies (Colab or Jupyter)
+
+```python
 !pip install kagglehub transformers torch wordcloud matplotlib seaborn
-📂 Dataset
-You must upload your kaggle.json file to authenticate and access the dataset:
-
+📁 Upload Dataset Key
 python
 Copy
 Edit
 from google.colab import files
 files.upload()  # Upload your kaggle.json
-The dataset is automatically downloaded using:
-
+⬇️ Download Dataset
 python
 Copy
 Edit
 import kagglehub
 path = kagglehub.dataset_download("mathurinache/dialogptlarge")
-🛠️ Usage
-Clean and Tokenize Dialogue
+🧼 Preprocess & Tokenize
 python
 Copy
 Edit
 cleaned = clean_text(raw_text)
 tokens = tokenize_dialogues([cleaned])
-Calculate Perplexity
+📉 Evaluate Perplexity
 python
 Copy
 Edit
 ppl = calculate_perplexity(tokens)
 print("Model Perplexity:", ppl)
-Plot Loss Graph
+📊 Visualize Loss and Confidence
 python
 Copy
 Edit
-plot_loss_graph([1.85, 1.72, 1.55, 1.42])  # Example values
-Visualize Token Confidence
-python
-Copy
-Edit
+plot_loss_graph([1.85, 1.72, 1.55, 1.42])
 visualize_token_confidence("How are you doing today?")
-#🧰 Technologies Used
-Python 3
+📁 Project Structure
+perl
+Copy
+Edit
+📦 dialoGPT-dialogue-eval
+├── dialoGPT_dialogue_eval.py       # Full source code
+├── sample_dataset/                 # (Optional) Dialogue examples
+├── README.md                       # Project documentation
+├── requirements.txt                # Dependencies list
+📉 Visualizations
+Token-level confidence scores using softmax logits
 
-Hugging Face Transformers
+Training loss vs. epoch
 
-PyTorch
+(Optional) Word cloud from dialogues
 
-KaggleHub
+🚀 Future Enhancements
+Integrate user-controlled conversation loops
 
-Matplotlib & Seaborn
+Fine-tune DialoGPT with domain-specific data
 
-WordCloud (optional)
+Build interactive chatbot interface
 
-#🤝 Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
+Deploy with Streamlit or Gradio for live demos
 
-#📄 License
-This project is licensed under the MIT License.
+👨‍💻 Author
+Deekshith Poleboina
+📍 GitHub: https://github.com/Deekshithpoleboina
 
-#👤 Author
-Your Name — [https://github.com/Deekshithpoleboina]
+📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
