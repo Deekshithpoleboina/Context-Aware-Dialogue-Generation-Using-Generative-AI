@@ -85,6 +85,7 @@ print("Model Perplexity:", ppl)
 plot_loss_graph([1.85, 1.72, 1.55, 1.42])
 visualize_token_confidence("How are you doing today?")
 ```
+---
 ## 📁 Project Structure
 ```bash
 📦 dialoGPT-dialogue-eval
@@ -93,21 +94,24 @@ visualize_token_confidence("How are you doing today?")
 ├── README.md                       # Project documentation
 ├── requirements.txt                # Dependencies list
 ```
+---
 ## 📉 Visualizations
 - Training loss vs. epoch
 - Token-level confidence (via softmax logits)
 - Optional word cloud from dialogue data
+---
 
 ## 🚀 Future Improvements
 - Add user-controlled interactive loops
 - Fine-tune DialoGPT on custom datasets
 - Build and deploy chatbot using Streamlit or Gradio
 - Add evaluation metrics like BLEU or ROUGE
+---
 
 ## 👨‍💻 Author
 Deekshith Poleboina
 GitHub: @Deekshithpoleboina
-
+---
 ## 📄 License
 - This project is licensed under the MIT License. See the LICENSE file for details.
 
