@@ -109,10 +109,11 @@ visualize_token_confidence("How are you doing today?")
 ---
 
 ## 👨‍💻 Author
-Deekshith Poleboina
-GitHub: @Deekshithpoleboina
+
+**Deekshith**
+GitHub:[https://github.com/Deekshithpoleboina](https://github.com/Deekshithpoleboina)
 ---
 ## 📄 License
-- This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 
