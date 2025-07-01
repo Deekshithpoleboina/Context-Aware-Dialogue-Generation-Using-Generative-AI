@@ -65,3 +65,50 @@ This project demonstrates how to evaluate and visualize the performance of Micro
 from google.colab import files
 files.upload()  # Upload your kaggle.json
 ```
+### ⬇️ Download Dataset
+```bash
+import kagglehub
+path = kagglehub.dataset_download("mathurinache/dialogptlarge")
+```
+### 🧼 Preprocess & Tokenize
+```bash
+cleaned = clean_text(raw_text)
+tokens = tokenize_dialogues([cleaned])
+```
+### 📉 Compute Perplexity
+```bash
+ppl = calculate_perplexity(tokens)
+print("Model Perplexity:", ppl)
+```
+### 📊 Visualize Loss & Confidence
+```bash
+plot_loss_graph([1.85, 1.72, 1.55, 1.42])
+visualize_token_confidence("How are you doing today?")
+```
+## 📁 Project Structure
+```bash
+📦 dialoGPT-dialogue-eval
+├── dialoGPT_dialogue_eval.py       # Full source code
+├── sample_dataset/                 # (Optional) Dialogue examples
+├── README.md                       # Project documentation
+├── requirements.txt                # Dependencies list
+```
+## 📉 Visualizations
+- Training loss vs. epoch
+- Token-level confidence (via softmax logits)
+- Optional word cloud from dialogue data
+
+## 🚀 Future Improvements
+- Add user-controlled interactive loops
+- Fine-tune DialoGPT on custom datasets
+- Build and deploy chatbot using Streamlit or Gradio
+- Add evaluation metrics like BLEU or ROUGE
+
+## 👨‍💻 Author
+Deekshith Poleboina
+GitHub: @Deekshithpoleboina
+
+## 📄 License
+- This project is licensed under the MIT License. See the LICENSE file for details.
+
+
