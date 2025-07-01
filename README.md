@@ -66,7 +66,7 @@ python
 Copy
 Edit
 visualize_token_confidence("How are you doing today?")
-🧰 Technologies Used
+#🧰 Technologies Used
 Python 3
 
 Hugging Face Transformers
